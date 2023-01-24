@@ -10,7 +10,7 @@ from .schema import RangePartitioningSchemaEditor
 from .strategy import RangePartitioningStrategy
 
 
-async def init_manager(db: Database):
+def init_manager(db: Database):
     return PartitioningManager(
         configs=[
             PartitioningConfig(
@@ -40,3 +40,7 @@ async def init_manager(db: Database):
         ],
         schema_editor=RangePartitioningSchemaEditor(db)
     )
+
+
+__all__ = ("init_manager",)
+
