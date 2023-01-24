@@ -5,7 +5,7 @@ from .partition import Partition
 
 
 class PartitioningStrategy:
-    """Base class for implementing a mysql_partitioning_ext strategy for a partitioned
+    """Base class for implementing a partitioning strategy for a partitioned
     table."""
 
     @abstractmethod

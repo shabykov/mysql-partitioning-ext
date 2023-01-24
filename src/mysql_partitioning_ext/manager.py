@@ -26,7 +26,7 @@ class PartitioningManager:
             self,
             config: PartitioningConfig,
     ) -> Optional[TablePartitioningPlan]:
-        """Creates a mysql_partitioning_ext plan for one mysql_partitioning_ext config."""
+        """Creates a partitioning plan for one partitioning config."""
 
         plan = TablePartitioningPlan(config, self.schema_editor)
 

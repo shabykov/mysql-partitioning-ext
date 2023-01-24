@@ -1,17 +1,17 @@
 from dataclasses import dataclass, field
 from typing import List, final
 
-from .config import PartitioningConfig
 from .schema import SchemaEditor
 from .partition import Partition
+from .config import PartitioningConfig
 
 
 @dataclass
 class TablePartitioningPlan:
     """Describes the partitions that are going to be created/deleted for a
-    particular mysql_partitioning_ext config.
+    particular partitioning config.
 
-    A "mysql_partitioning_ext config" applies to one model.
+    A "partitioning config" applies to one model.
     """
 
     config: PartitioningConfig

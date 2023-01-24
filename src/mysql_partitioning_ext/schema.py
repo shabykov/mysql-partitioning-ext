@@ -15,8 +15,8 @@ class SchemaEditor:
         "ALTER TABLE %s TRUNCATE PARTITION %s;"
     )
     sql_get_partition = (
-        "SELECT partition_name FROM INFORMATION_SCHEMA.PARTITIONS "
-        "WHERE partition_name = '%s';"
+        "SELECT PARTITION_NAME FROM INFORMATION_SCHEMA.PARTITIONS "
+        "WHERE PARTITION_NAME = '%s' and TABLE_NAME = '%s';"
     )
 
     @abstractmethod
@@ -47,6 +47,7 @@ class SchemaEditor:
     @abstractmethod
     async def get_partition(
             self,
+            table: str,
             name: str
     ) -> t.Optional[str]:
         """Get partition"""

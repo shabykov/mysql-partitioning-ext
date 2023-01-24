@@ -3,7 +3,7 @@ import typing as t
 from abc import abstractmethod
 from datetime import date
 
-from dateutil.relativedelta import relativedelta
+from dateutil.relativedelta import relativedelta  # type: ignore
 
 from .error import PartitioningError
 from .schema import SchemaEditor
@@ -51,7 +51,7 @@ class TimePartitionSize:
             self.value = days
         else:
             raise PartitioningError(
-                "Unsupported time mysql_partitioning_ext unit"
+                "Unsupported time partitioning unit"
             )
 
     @t.final
@@ -69,7 +69,7 @@ class TimePartitionSize:
             return relativedelta(days=self.value)
 
         raise PartitioningError(
-            "Unsupported time mysql_partitioning_ext unit: %s" % self.unit
+            "Unsupported time partitioning unit: %s" % self.unit
         )
 
     @t.final
